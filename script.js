@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 //set generatepassword function
 function generatePassword(){
 var userInput = window.prompt("What is the password length?")
@@ -58,6 +59,25 @@ if (userWantNumbers === true){
 if (userChoice.length === 0){
   userChoice.push(lowerCase)
 }
+
+//return a random integer ranging from min to max
+function randomInt(min, max){
+  //if 'max' is not defined, assume we want range from 0 to min
+  if(!max){
+    max=min
+    min = 0
+  }
+  //Interpolate random values
+  var rand = Math.random()
+  return Math.floor(min * (1-rand) + rand * max)
+}
+
+//gets random item from list
+function getRandomItem(list){
+  return list[randomInt(list.length)]
+}
+
+var generatedPassword = ""
 
 for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(userChoice)

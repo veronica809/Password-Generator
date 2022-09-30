@@ -2,9 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 
 //set generatepassword function
-function generatPassword(){
-window.prompt()
-prompt()
+function generatePassword(){
+var userInput = window.prompt("What is the password length?")
 
 }
 

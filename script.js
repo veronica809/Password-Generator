@@ -36,14 +36,40 @@ for (var i = 0; i < lowerCase.length; i++) {
   upperCase[i] = lowerCase[i].toUpperCase()
 }
 
+//acknowledge user's character selections
+var userChoice = []
+
+if (userWantLowercase === true){
+  userChoice.push(lowerCase)
+}
+
+if (userWantUppercase === true){
+  userChoice.push(upperCase)
+}
+
+if (userWantCharacter === true){
+  userChoice.push(specialChar)
+}
+
+if (userWantNumbers === true){
+  userChoice.push(numberList)
+}
+
+if (userChoice.length === 0){
+  userChoice.push(lowerCase)
+}
+
+for (var i = 0; i < passwordLength; i++){
+  var randomList = getRandomItem(userChoice)
+  var randomChar = getRandomItem(randomList)
+  generatedPassword += randomChar //takes answers and generates password
+
+  console.log(generatedPassword)
 }
 
 
-//select password criteria
-var userWantLowercase = window.confirm("Would you like to include lowercase letters in your password?")
-var userWantUppercase = window.confirm("Would you like to include uppercase letters in your password?")
-var userWantNumbers = window.confirm("Would you like to include numbers in your password?")
-var userWantCharacter = window.confirm("Would you like to include special characters in your password?")
+}
+
 
 
 
